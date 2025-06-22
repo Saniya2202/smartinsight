@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- Commented out resume upload form for testing -->
+<h2>Upload Your Resume</h2>
+<form method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- Textarea for JD -->
+<label for="jd">Paste Job Description (optional):</label>
+<textarea name="job_description" rows="5" cols="50" placeholder="Paste the job description here..."></textarea>
+
+    <button type="submit">Analyze</button>
+</form>
+
+</body>
+</html>
+
+<!-- Test form without upload -->
+<!--<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Analyze with Mock Data</button>
+</form>-->

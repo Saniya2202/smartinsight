@@ -1,0 +1,21 @@
+Python
+Django
+Flask
+Java
+JavaScript
+HTML
+CSS
+SQL
+MySQL
+MongoDB
+React
+Node.js
+Git
+GitHub
+REST API
+Power BI
+Excel
+Pandas
+NumPy
+Machine Learning
+Deep Learning

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Result</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+     <div class="container">
+    <h2>Extracted Skills</h2>
+    <ul>{% for skill in skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+
+    <h2>Job Matches</h2>
+   {% for job in jobs %}
+        <div class="job-card">
+            <h3>{{ job.title }}</h3>
+            <p>Required Skills: {{ job.skills|join:", " }}</p>
+        </div>
+    {% endfor %}
+
+    <h2>Cover Letter</h2>
+    <pre>{{ cover_letter }}</pre>
+    <a href="{% url 'download_cover_letter' %}">
+  <button style="padding: 10px 20px; background-color: #2980b9; color: white; border: none; border-radius: 6px; cursor: pointer;">
+    Download Cover Letter
+  </button>
+</a>
+
+    <h2>Resume Match Score</h2>
+<div class="progress-bar">
+  <div class="progress-fill {{ progress_class }}" style="width: {{ match_score }}%;">
+        {{ match_score }}%
+  </div>
+</div>
+</div>
+
+</body>
+</html>
